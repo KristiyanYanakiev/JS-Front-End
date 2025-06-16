@@ -1,16 +1,20 @@
-function createObject(firstName, secondName, color) {
-    const object = {firstName, secondName, color}
-    return object
-}
+// function createObject(firstName, secondName, color) {
+//     const object = {firstName, secondName, color}
+//     return object
+// }
 
 
-console.log(createObject("Eto", "Yan", "green"))
+// console.log(createObject("Eto", "Yan", "green"))
 
 
-const myAssociativeArray = []
+// const myAssociativeArray = []
 
-myAssociativeArray["firstName"] = "Kris"
-myAssociativeArray["age"] = 25
+// myAssociativeArray["firstName"] = "Kris"
+// myAssociativeArray["age"] = 25
 
-delete myAssociativeArray["firstName"]
-console.log(myAssociativeArray)
+// delete myAssociativeArray["firstName"]
+// console.log(myAssociativeArray)
+
+
+
+    

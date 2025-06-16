@@ -10,15 +10,24 @@ let secObject = {
 
 
 
+console.log(JSON.stringify(Object.entries(myObject)))
 
-console.log(myObject);
-console.log(JSON.stringify(myObject))
+newObj = {}
+
+for (const element of Object.entries(myObject)) {
+    newObj[element[0] + "addedINfo"] = element[1] 
+}
+
+console.log(newObj);
+
+console.log("------- with reduce: -------")
+
+reducedObj = Object.entries(myObject).reduce((acc, [key, value]) => {
+    acc[key + " new Info"] = value;
+    return acc;
 
 
-someArray = ["Kris", "Yanakiev", 1, 2, 3]
+}, {} )
 
-const [firstName, secondName, ...rest] = someArray
+console.log(reducedObj)
 
-console.log(firstName)
-console.log(secondName)
-console.log(rest)
