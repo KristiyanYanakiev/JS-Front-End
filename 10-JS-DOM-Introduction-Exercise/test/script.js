@@ -1,5 +1,7 @@
-myParagragh = document.querySelector("p")
+myArr = ["kris", 25, "Bulgarian"]
 
-console.log(myParagragh)
+myArr = myArr.map((el, i) => ({"name": el, index: i}))
 
-console.log(myParagragh.parentElement)
+for (const element of myArr) {
+    console.log(element)
+}
