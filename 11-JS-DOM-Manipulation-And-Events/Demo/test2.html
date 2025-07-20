@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    
+    <ul>
+        <li>
+            <span>Add event handler with HTML Attributes</span>
+            <button onclick="inlineEvenHandler(event)">Click me!</button>
+        </li>
+
+        <li>
+            <span>Add event handler using DOM element properties</span>
+            <button id="element-properties">Click me!</button>
+        </li>
+
+        <li>
+            <span>Add event using DOM event handler</span>
+            <button id="event-handler">Click me!</button>
+        </li>
+    </ul>
+
+    <script>
+
+      //first way: Inline using HTML Attributes 
+
+      function inlineEvenHandler(event) {
+        console.log("event handled")
+      }
+
+      //second way: DOM element property 
+
+      const buttonEl = document.querySelector("#element-properties")
+      buttonEl.onclick = function() {
+        console.log("event handled using DOM element onclick property")
+      }
+
+
+      // third way: Event Listener 
+
+      const buttonElement = document.querySelector("#event-handler")
+      buttonElement.addEventListener("click",  eventHandling)
+
+      function eventHandling(e) {
+        console.log("event handled by event listener")
+        console.log(e)
+      }
+    </script>
+
+</body>
+</html>

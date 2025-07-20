@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    
+    <div id="container">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolorum eaque sit repellendus sequi non enim est totam velit quisquam sed laborum deleniti, doloremque cum sunt voluptatibus perspiciatis obcaecati veniam!</p>
+    </div>
+
+    <script>
+        const newPElement = document.createElement("p")
+        newPElement.textContent = "Here I am"
+
+        const container = document.querySelector("#container")
+        
+        container.append(newPElement)
+
+        setTimeout(() => {
+            newPElement.remove()
+        }, 2000)
+        
+        
+    </script>
+</body>
+</html>
