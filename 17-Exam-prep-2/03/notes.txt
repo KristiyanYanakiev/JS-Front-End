@@ -1,0 +1,37 @@
+utility functions: 
+
+    function createElement(tag, properties, container) {
+        const element = document.createElement(tag);
+
+        Object.keys(properties).forEach(key => {
+            if ( typeof properties[key] === 'object' ) {
+                Object.assign(element[key], properties[key]);
+            } else {
+                element[key] = properties[key];
+            }
+        });
+
+        if ( container ) container.append(element);
+
+        return element;
+    }
+
+    const fields = [...document.querySelectorAll('#name, #time, #description')];
+    const btnAddEl = document.querySelector('#add-btn');
+
+    const listPreviewEl = document.querySelector('#preview-list');
+    const listArchiveEl = document.querySelector('#archive-list');
+
+    function createEntry({ name, time, desc }) {
+        // li > article > p, p, p < div.buttons > button.edit-btn, button.next-btn
+        const entryEl = createElement('li', { dataset: { name, time, desc }}, listPreviewEl);
+        const articleEl = createElement('article', {}, entryEl);
+        createElement('p', { textContent: name }, articleEl);
+        createElement('p', { textContent: time }, articleEl);
+        createElement('p', { textContent: desc }, articleEl);
+        const buttonsEl = createElement('div', { className: 'buttons'}, entryEl);
+        createElement('button', { className: 'edit-btn', textContent: 'Edit', onclick: editHandler }, buttonsEl);
+        createElement('button', { className: 'next-btn', textContent: 'Next', onclick: nextHandler }, buttonsEl);
+    }
+
+
