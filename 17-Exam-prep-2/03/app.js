@@ -91,11 +91,12 @@ function init() {
         }
         
         postFetch(baseUrl, newObj, () => {
-            document.querySelector("#name").value = ""
-            document.querySelector("#quantity").value = ""
-            document.querySelector("#date").value = ""
+            
             loadHandler()
         })
+        document.querySelector("#name").value = ""
+            document.querySelector("#quantity").value = ""
+            document.querySelector("#date").value = ""
     }
 
     function editHandler(e) {
@@ -114,13 +115,14 @@ function init() {
             
             orderBtn.disabled = false
             editBtn.disabled = true
-            document.querySelector("#name").value = ""
-            document.querySelector("#quantity").value = ""
-            document.querySelector("#date").value = ""
+            
             loadHandler()
             
 
         })
+        document.querySelector("#name").value = ""
+            document.querySelector("#quantity").value = ""
+            document.querySelector("#date").value = ""
         
     }
 
